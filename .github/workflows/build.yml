@@ -1,0 +1,28 @@
+name: "build"
+on: [push, pull_request]
+jobs:
+  launch-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - name: Check versions
+        run: |
+          node --version
+          npm --version 
+      - name: Dummy KV DB
+        run: |
+          ls
+          cd code/kv_bash
+          source kv.sh
+          kset foo bar
+          kget foo
+          kget bar
+      - name: Build Images
+        run: |
+          cd code
+          cp .env.example .env
+          chmod +x *.sh
+          ./download.sh
+          ./build.sh
+          ./start.sh
+          ./stop.sh

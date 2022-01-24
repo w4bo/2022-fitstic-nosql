@@ -1,0 +1,133 @@
+version: "3.9"
+services:
+
+  # Image of the MySQL database
+  mysql:
+    image: mysql:5.7
+    hostname: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_USER}
+      MYSQL_DATABASE: ${MYSQL_PWD}
+    expose:
+      - 3306
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 5s
+      retries: 10
+    networks:
+      - default
+
+  # Populate the MySQL database when the database is ready (i.e., is healthy)
+  mysql-seed:
+    hostname: mysql-seed
+    container_name: mysql-seed
+    image: mysql:8.0
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./mysql/data/:/data
+    command: /bin/bash -c "mysql -hmysql -u${MYSQL_USER} -p${MYSQL_PWD} < /data/foodmart.sql"
+    networks:
+      - default
+
+  redis:
+    image: redis:6.2
+    hostname: redis
+    container_name: redis
+    expose:
+      - 6379
+    ports:
+      - "6379:6379"
+    networks:
+      - default
+
+  mongodb:
+    image: mongo:5.0
+    hostname: mongodb
+    container_name: mongodb
+    restart: always
+    expose:
+      - 27017
+      - 37017
+    ports:
+      - "27017:27017"
+      - "37017:37017"
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+    #   MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PWD}
+    networks:
+      - default
+    healthcheck:
+      test: |
+        host=`hostname --ip-address || echo '127.0.0.1'`;
+        mongo --quiet $host/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' && echo 0 || echo 1
+      interval: 5s
+    logging:
+      driver: "none"
+
+  mongodb-seed:
+    image: mongo:5.0
+    hostname: mongodb-seed
+    container_name: mongodb-seed
+    networks:
+      - default
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    volumes:
+      - ./mongodb/data/:/data
+    command: /bin/bash -c "mongoimport  --host=mongodb -d exercises -c foo --file=/data/foo.json --jsonArray &&
+      mongorestore --host=mongodb -d exercises -c restaurants /data/restaurants.bson &&
+      mongorestore --host=mongodb -d exercises -c games /data/games.bson &&
+      mongorestore --host=mongodb -d exercises -c yelp-business /data/yelp-business.bson"
+
+  neo4j:
+    image: neo4j:4.4
+    hostname: neo4j
+    container_name: neo4j
+    volumes:
+      - ./neo4j/data:/datasets
+    expose:
+      - 7687
+      - 7474
+    ports:
+      - "7687:7687"
+      - "7474:7474"
+    networks:
+      - default
+    environment:
+      - NEO4J_AUTH=neo4j/fitstic
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+
+  cassandra:
+    image: cassandra:4.0.1
+    container_name: cassandra
+    expose:
+      - 9042
+    ports:
+      - "9042:9042"
+    environment:
+      - "MAX_HEAP_SIZE=256M"
+      - "HEAP_NEWSIZE=128M"
+    volumes:
+      - ./cassandra/data:/root/labwork/
+    restart: always
+    healthcheck:
+      test: [ "CMD", "cqlsh", "-u cassandra", "-p cassandra" , "-e describe keyspaces" ]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  cassandra-seed:
+    container_name: cassandra-seed
+    image: cassandra:4.0.1
+    depends_on:
+      cassandra:
+        condition: service_healthy
+    volumes:
+      - ./cassandra/data:/data
+    command: /bin/bash -c "cqlsh cassandra -f /data/schema.cql"

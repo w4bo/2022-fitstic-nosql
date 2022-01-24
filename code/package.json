@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-nosql",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "27.4.7"
+  },
+  "dependencies": {
+    "cassandra-driver": "4.6.3",
+    "dotenv": "14.1.0",
+    "mongodb": "4.3.0",
+    "mysql": "2.18.1",
+    "neo4j-driver": "4.4.1",
+    "redis": "4.0.2"
+  }
+}
