@@ -30,6 +30,7 @@ NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, a
 
 Windows, open a new terminal and run the following commands:
 
+    cd code
     copy .env.example .env
     build.bat
     download.bat
@@ -37,7 +38,8 @@ Windows, open a new terminal and run the following commands:
 
 Linux, open a new terminal and run the following commands:
 
+    cd code/
     cp .env.example .env
-    build.sh
-    download.sh
-    start.sh
+    sh build.sh
+    sh download.sh
+    sh start.sh
