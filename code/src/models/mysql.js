@@ -5,6 +5,7 @@ const client = mysql.createConnection({
     host: process.env.MYSQL_URL,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PWD,
+    port: process.env.MYSQL_PORT,
     database: 'foodmart'
 });
 

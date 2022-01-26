@@ -31,7 +31,7 @@ services:
         condition: service_healthy
     volumes:
       - ./mysql/data/:/data
-    command: /bin/bash -c "mysql -hmysql -u${MYSQL_USER} -p${MYSQL_PWD} < /data/foodmart.sql"
+    command: /bin/bash -c "mysql -hmysql -u${MYSQL_USER} -p${MYSQL_PWD} -P${MYSQL_PORT} < /data/foodmart.sql"
     networks:
       - default
 
