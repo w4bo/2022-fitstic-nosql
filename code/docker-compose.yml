@@ -9,10 +9,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_USER}
       MYSQL_DATABASE: ${MYSQL_PWD}
+      MYSQL_TCP_PORT: ${MYSQL_PORT}
     expose:
-      - 3306
+      - ${MYSQL_PORT}
     ports:
-      - "3306:3306"
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       timeout: 5s
