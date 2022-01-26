@@ -4,7 +4,7 @@
 
 NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, and columnar databases.
 
-## Install
+## Installing the software
 
 - Install `docker`
     - Windows: https://docs.docker.com/desktop/windows/install/
