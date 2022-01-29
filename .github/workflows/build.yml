@@ -5,10 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - name: Check versions
-        run: |
-          node --version
-          npm --version 
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: '17.3.0'
       - name: Dummy KV DB
         run: |
           ls
@@ -20,9 +19,9 @@ jobs:
       - name: Build Images
         run: |
           cd code
-          cp .env.example .env
           chmod +x *.sh
-          ./download.sh
+          ./init.sh
           ./build.sh
+          ./download.sh
           ./start.sh
           ./stop.sh

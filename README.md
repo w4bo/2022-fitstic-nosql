@@ -1,10 +1,10 @@
 # NoSQL in Action!
 
-[![build](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml/badge.svg)](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml)
+[![build](https://github.com/w4bo/nodejs-nosql/actions/workflows/build.yml/badge.svg)](https://github.com/w4bo/nodejs-nosql/actions/workflows/build.yml)
 
 NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, and columnar databases.
 
-## Installing the software
+## Install
 
 - Install `docker`
     - Windows: https://docs.docker.com/desktop/windows/install/
@@ -25,7 +25,7 @@ NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, a
 - Check that docker works by opening a *new* terminal (`cmd.exe` in Windows or `/bin/bash` in Linux) and running `docker run hello-world`
 - Install NodeJS (tested with versions 16.13.2 and 17.3.0)
     - https://nodejs.org/en/download/
-    - Check that NodeJS works by opening a *new* terminal (`cmd.exe` in Windows or `/bin/bash` in Linux) and running `node --version` (e.g., the output should be `v17.3.0`)
+    - Check that NodeJS works by opening a *new* terminal (`cmd.exe` in Windows or `/bin/bash` in Linux) and running `node --version` (e.g., the output should be `v17.3.1`)
 - Install Robo 3T (not Studio 3T): https://robomongo.org/download
 
 ## Running the software
@@ -35,27 +35,34 @@ NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, a
 Open a new terminal and run the following commands:
 
     cd code
-    copy .env.example .env
+    init.bat
     build.bat
     download.bat
     start.bat
 
-- If Windows complains about running the scripts, click on "Ulteriori Informazioni"
+- If Windows complains about:
+  - Running the scripts
 
     ![/imgs/win-docker4.png](imgs/win-docker4.png)
-- and then
+    
+    and then
 
     ![/imgs/win-docker5.png](imgs/win-docker5.png)
+
+  - Sharing directories
+
+    ![/imgs/win-docker6.png](imgs/win-docker6.png)
+
 - If everything runs well, the result should be something like:
 
     ![/imgs/docker-success.png](imgs/docker-success.png)
 
-### Linux
+### Linux and MacOS
 
 Open a new terminal and run the following commands:
 
     cd code
-    cp .env.example .env
+    sh init.sh
     sh build.sh
     sh download.sh
     sh start.sh
