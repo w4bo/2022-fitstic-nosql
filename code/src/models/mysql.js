@@ -9,15 +9,12 @@ const client = mysql.createConnection({
     database: 'foodmart'
 });
 
-async function mysql01() {
-    return await query("select * from customer");
-}
-
 async function query(s) {
     return new Promise((resolve, reject) => {
         client.query(s, (err, rows) => {
-            if (err)
+            if (err) {
                 return reject(err);
+            }
             resolve(rows);
         });
     });
@@ -33,4 +30,4 @@ async function disconnect() {
 module.exports = {};
 module.exports.disconnect = disconnect;
 module.exports.connect = connect;
-module.exports.mysql01 = mysql01;
+module.exports.query = query;

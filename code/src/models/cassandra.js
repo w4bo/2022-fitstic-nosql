@@ -8,10 +8,6 @@ const client = new cassandra.Client({
     authProvider: new cassandra.auth.PlainTextAuthProvider(process.env.CASSANDRA_USER, process.env.CASSANDRA_PWD)
 });
 
-function killrvideo01() {
-    return query("select * from videos");
-}
-
 async function query(s) {
     return await client.execute(s);
 }
@@ -27,4 +23,4 @@ async function disconnect() {
 module.exports = {};
 module.exports.disconnect = disconnect;
 module.exports.connect = connect;
-module.exports.killrvideo01 = killrvideo01;
+module.exports.query = query;
