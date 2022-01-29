@@ -1,6 +1,6 @@
 # NoSQL in Action!
 
-[![build](https://github.com/w4bo/nodejs-nosql/actions/workflows/build.yml/badge.svg)](https://github.com/w4bo/nodejs-nosql/actions/workflows/build.yml)
+[![build](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml/badge.svg)](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml)
 
 NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, and columnar databases.
 
