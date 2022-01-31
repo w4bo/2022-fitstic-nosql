@@ -18,7 +18,7 @@
 
 ### Exercise 2
 
-- Creare una nuova tabella `videos_by_title_year` per  memorizzare video con una  chiave composta. E' buona pratica dare alle tabelle un nome  che rispecchi il modo di interrogarle
+- Creare una nuova tabella `videos_by_title_year` per memorizzare video con una  chiave composta. E' buona pratica dare alle tabelle un nome  che rispecchi il modo di interrogarle
 
 - Caricare dati nella tabella. Fare riferimento al file `/root/labwork/exercise-3/videos_by_title_year.csv`
 
