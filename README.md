@@ -34,6 +34,7 @@ NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, a
 
 Open a new terminal and run the following commands:
 
+    cd C:\path\to\the\downloaded\folder (replace it with the actual path)
     cd code
     init.bat
     build.bat
@@ -61,6 +62,7 @@ Open a new terminal and run the following commands:
 
 Open a new terminal and run the following commands:
 
+    cd /path/to/the/downloaded/folder (replace it with the actual path)
     cd code
     sh init.sh
     sh build.sh
