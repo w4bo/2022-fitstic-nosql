@@ -41,19 +41,3 @@ jobs:
           ./download.sh
           ./start.sh
           ./stop.sh
-  release:
-    needs:
-      - build
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.0
-      - name: ZIP build
-        run: zip -r slides.zip slides
-      - name: release
-        run: |
-          npm install
-          npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
