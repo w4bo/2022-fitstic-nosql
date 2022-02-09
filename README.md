@@ -1,5 +1,7 @@
 # NoSQL in Action!
 
+Link al test: https://forms.gle/qRvseutEbGARdRzc6
+
 [![build](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml/badge.svg)](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml)
 
 NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, and columnar databases.
