@@ -1,2 +1,3 @@
 cd /d %~dp0
-cmd.exe
+REM cmd.exe
+start cmd /k start.bat

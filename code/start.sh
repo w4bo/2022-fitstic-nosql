@@ -5,6 +5,9 @@ if [ -f .env ]; then
   export $(cat .env | sed 's/#.*//g' | xargs)
 fi
 
+./build.sh
+./download.sh
+
 # clean all the docker containers
 sudo docker stop $(docker ps -aq)
 sudo docker rm $(docker ps -aq)

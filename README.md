@@ -1,7 +1,5 @@
 # NoSQL in Action!
 
-[![build](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml/badge.svg)](https://github.com/w4bo/2022-fitstic-nosql/actions/workflows/build.yml)
-
 NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, and columnar databases.
 
 ## Install
@@ -36,9 +34,6 @@ Open a new terminal and run the following commands:
 
     cd C:\path\to\the\downloaded\folder (replace it with the actual path)
     cd code
-    init.bat
-    build.bat
-    download.bat
     start.bat
 
 - If Windows complains about:
@@ -64,9 +59,6 @@ Open a new terminal and run the following commands:
 
     cd /path/to/the/downloaded/folder (replace it with the actual path)
     cd code
-    sh init.sh
-    sh build.sh
-    sh download.sh
     sh start.sh
 
 ### [Deprecated] Setting up the old software stack
@@ -78,3 +70,27 @@ This is the old way, but use it only if docker fails.
 - MongoDB: https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.3-signed.msi
     - Robo3T (workbench di MongoDB): https://download.studio3t.com/robomongo/windows/robo3t-1.4.2-windows-x86_64-8650949.exe
     - MongoDB Database Tools (import/export di MongoDB): https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.3.0.zip
+
+## (Tentative) Calendar
+
+<!---
+- Lecture 01 (3h): Introduction to NoSQL databases
+- Lecture 02 (3h): Cassandra
+- Lecture 03 (3h): Test + Cassandra
+- Lecture 04 (3h): Cassandra + Neo4J
+- Lecture 05 (3h): Neo4J
+- Lecture 06 (3h): Neo4J + MongoDB Find
+- Lecture 07 (3h): Test Cassandra + MongoDB Find
+- Lecture 08 (3h): Test Neo4J + MongoDB Find
+- Lecture 09 (3h): MongoDB Find / Aggregate
+- Lecture 10 (3h): Test MongoDB + Redis + Real datasets
+-->
+
+- Lecture 01 (4h): Introduction to NoSQL databases
+- Lecture 02 (4h): Cassandra
+- Lecture 03 (4h): Test teoria, Cassandra
+- Lecture 04 (4h): Cassandra, Neo4J
+- Lecture 05 (4h): Test Cassandra, Neo4J
+- Lecture 06 (4h): Neo4J, MongoDB Find
+- Lecture 07 (3h): Test Neo4J, MongoDB Find
+- Lecture 08 (3h): Test MondoDB, ...

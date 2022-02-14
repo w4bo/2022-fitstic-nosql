@@ -1,1 +1,0 @@
-copy .env.example .env
