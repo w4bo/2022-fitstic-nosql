@@ -30,11 +30,13 @@ NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, a
 
 ### Windows
 
-Open a new terminal and run the following commands:
+Two alternatives:
+- Unzip and enter the downloaded folder, double click on `openprompt.bat`
+- Open a new terminal and run the following commands:
 
-    cd C:\path\to\the\downloaded\folder (replace it with the actual path)
-    cd code
-    start.bat
+        cd C:\path\to\the\downloaded\folder (replace it with the actual path)
+        cd code
+        start.bat
 
 - If Windows complains about:
   - Running the scripts
