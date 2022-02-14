@@ -2,17 +2,6 @@ name: "Build"
 
 on:
   push:
-    tags: '*'
-    branches: '**'
-    # branches-ignore:
-    #   - 'autodelivery**'
-    #   - 'bump-**'
-    #   - 'renovate/**'
-    paths-ignore:
-      - 'CHANGELOG.md'
-      - 'LICENSE'
-      - 'README.md'
-      - 'renovate.json'
   pull_request:
   workflow_dispatch:
 
@@ -36,8 +25,5 @@ jobs:
         run: |
           cd code
           chmod +x *.sh
-          ./init.sh
-          ./build.sh
-          ./download.sh
           ./start.sh
           ./stop.sh
