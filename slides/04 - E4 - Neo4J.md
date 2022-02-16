@@ -61,6 +61,10 @@ Manuale Cypher https://neo4j.com/docs/cypher-manual/current/
 20. Restituire la top-10 dei film con l'età media più bassa (usare le clausole order by e limit)
 
 ## Northwind
+
+See: https://neo4j.com/developer/example-data/#demo-server
+Access Northwind: https://demo.neo4jlabs.com:7473/browser/?dbms=neo4j://northwind@demo.neo4jlabs.com&db=northwind
+
 21. Restituire, per ogni prodotto (:Product), il numero di ordini ricevuti 
 22. Restituire, per il cliente (:Customer) con contactName Francisco Chang, i prodotti ordinati da altri clienti che hanno acquistato un prodotto acquistato in comune
 23. Restituire, per il prodotto con productName Mascarpone Fabioli, i 3 prodotti più ordinati insieme ad esso
