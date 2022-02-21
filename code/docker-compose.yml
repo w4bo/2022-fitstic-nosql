@@ -105,7 +105,7 @@ services:
       - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
 
   cassandra:
-    image: cassandra:4.0.2
+    image: cassandra:4.0.3
     container_name: cassandra
     expose:
       - 9042
@@ -125,7 +125,7 @@ services:
 
   cassandra-seed:
     container_name: cassandra-seed
-    image: cassandra:4.0.2
+    image: cassandra:4.0.3
     depends_on:
       cassandra:
         condition: service_healthy
