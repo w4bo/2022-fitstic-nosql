@@ -1,5 +1,7 @@
 # NoSQL in Action!
 
+https://forms.gle/kWd3eEWi1td5Uzdy7
+
 NoSQL (Not Only SQL) exercises against relational, key-value, document, graph, and columnar databases.
 
 ## Install
