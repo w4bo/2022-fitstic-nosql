@@ -118,21 +118,21 @@ Su quali delle seguenti tabelle la posso eseguire?
 
 
 1.
-        create table movies10 (
+        create table movies9 (
             movie_id uuid,
             year int, 
             actor text,
             primary key ((year, actor), movie_id)
         );
 
-        select * from movies10 where year = 2010 and actor = 'Tom Hanks';
+        select * from movies9 where year = 2010 and actor = 'Tom Hanks';
 
 1.
-        create table movies11 (
+        create table movies10 (
             movie_id uuid,
             year int, 
             actor text,
             primary key ((year, actor, movie_id))
         );
 
-        select * from movies11 where year = 2010 and actor = 'Tom Hanks';
+        select * from movies10 where year = 2010 and actor = 'Tom Hanks';
