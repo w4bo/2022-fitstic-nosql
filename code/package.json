@@ -5,7 +5,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "28.0.3"
+    "jest": "28.1.0"
   },
   "dependencies": {
     "cassandra-driver": "4.6.3",
