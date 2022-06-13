@@ -12,7 +12,7 @@
     "dotenv": "16.0.1",
     "mongodb": "4.7.0",
     "mysql": "2.18.1",
-    "neo4j-driver": "4.4.5",
+    "neo4j-driver": "4.4.6",
     "redis": "4.1.0"
   }
 }
