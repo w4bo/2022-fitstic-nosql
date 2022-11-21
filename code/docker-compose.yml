@@ -87,7 +87,7 @@ services:
       mongorestore --host=mongodb -d exercises -c yelp-business /data/yelp-business.bson"
 
   neo4j:
-    image: neo4j:5.1
+    image: neo4j:5.2
     hostname: neo4j
     container_name: neo4j
     volumes:
