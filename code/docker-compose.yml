@@ -36,7 +36,7 @@ services:
       - default
 
   redis:
-    image: redis:7.0
+    image: redis:7.2
     hostname: redis
     container_name: redis
     expose:
